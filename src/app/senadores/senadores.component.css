@@ -1,0 +1,21 @@
+.example-full-width {
+  display: block;
+}
+
+tr.mat-row {
+  height: 24px;
+}
+
+.content-container {
+  padding: 1rem 2rem;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  margin: 2rem auto;
+  width: fit-content;
+}

@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-left: 24px;
+  padding-top: 16px;
+}
+
+th.mat-header-cell:last-of-type,
+td.mat-cell:last-of-type {
+  text-align: right;
+}
+
+div.mat-sort-header-container.ng-tns-c132-3 {
+  justify-content: flex-end;
+}

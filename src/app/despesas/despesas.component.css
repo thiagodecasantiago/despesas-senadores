@@ -1,0 +1,30 @@
+mat-toolbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tables {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5%;
+}
+
+.table {
+  margin: 10px 0;
+}
+
+.error {
+  margin: 2rem auto;
+  width: fit-content;
+}

@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span>
+    Despesas dos senadores (2019) -
+    {{ (expensesList && expensesList.nomeSenador) || "" }}
+  </span>
+  <span class="example-spacer"></span>
+  <button mat-flat-button color="primary" (click)="goBack($event)">
+    Voltar
+  </button>
+</mat-toolbar>
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+<ng-container *ngIf="!isLoading">
+  <ng-container *ngIf="isError">
+    <p class="error">Não foi possível conectar ao servidor de dados.</p>
+  </ng-container>
+  <div *ngIf="!isError" class="tables">
+    <app-expenses-summary
+      [data]="expensesList"
+      class="table"
+    ></app-expenses-summary>
+    <app-expenses-details
+      [data]="expensesList"
+      class="table"
+    ></app-expenses-details>
+  </div>
+</ng-container>

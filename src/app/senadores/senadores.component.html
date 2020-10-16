@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+  <span>Despesas dos senadores (2019)</span>
+</mat-toolbar>
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+<ng-container *ngIf="!isLoading">
+  <ng-container *ngIf="isError">
+    <p class="error">Não foi possível conectar ao servidor de dados.</p>
+  </ng-container>
+  <div *ngIf="!isError" class="content-container">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Senador</mat-label>
+      <input
+        type="text"
+        aria-label="Nome do Senador"
+        matInput
+        [formControl]="senatorName"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option
+          *ngFor="let senator of filteredOptions | async"
+          [value]="senator"
+        >
+          {{ senator.nomeSenador }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <div *ngIf="!senatorName.value.nomeSenador" class="align-center">
+      <p>Escolha um senador para ver suas despesas...</p>
+    </div>
+    <app-expenses-summary
+      *ngIf="senatorName.value.nomeSenador"
+      [data]="senatorData"
+      [showDetailsButton]="true"
+    ></app-expenses-summary>
+  </div>
+</ng-container>
