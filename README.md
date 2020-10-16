@@ -16,14 +16,15 @@ Data was parsed to a more suitable format.
 - HTML
 - CSS
 - Javascript
-- Angular
+- [Angular](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
 
 ## How to run
 
 #### Clone repo & install dependencies
 
-        git clone https://github.com/thiagodecasantiago/<repo-address>.git
-        cd <repo folder>
+        git clone https://github.com/thiagodecasantiago/despesas-senadores.git
+        cd despesas-senadores
         npm install
 
 #### Start data server
